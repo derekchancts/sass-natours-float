@@ -1,0 +1,64 @@
+
+
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;  /* link is an inline element, so it can overlap if we try to give it some padding. Change to inline-blk */
+                            /* inlink-blocks are treated as text. So, just need to set parent element (text-box) to "text-align: center"; */
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  
+  }
+
+  /* when clicked */
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: #fff;
+    } 
+  }
+
+  /* pseudo elements are children of the parent element (btn in this case) */
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  &--animated {
+    /* animation: moveInBottom 0.5s ease-out .75s; */
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;  /* the styles will be zero percent before the animation starts */
+                                    /* @keyframes moveInBottom 0% will apply */
+  }
+}
+

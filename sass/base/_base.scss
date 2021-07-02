@@ -1,0 +1,26 @@
+
+// base file contain files - the basic definition about our entire project
+
+*,
+*::after,
+*::before {
+  margin: 0; 
+  padding: 0;
+  /* box-sizing: border-box; */
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%;   // this defines what 1 rem is (global definition)
+}
+
+body {
+  // font-family: "Lato", sans-serif;
+  // font-weight: 400;
+  // /* font-size: 16px; */
+  // line-height: 1.7;
+  // color: $color-grey-dark;
+  // padding: 3rem;
+  box-sizing: border-box;
+}
