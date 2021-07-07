@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?42f3c3834d738a717088a4d15961e219") format("truetype"),
+url("./flaticon.woff?42f3c3834d738a717088a4d15961e219") format("woff"),
+url("./flaticon.woff2?42f3c3834d738a717088a4d15961e219") format("woff2"),
+url("./flaticon.eot?42f3c3834d738a717088a4d15961e219#iefix") format("embedded-opentype"),
+url("./flaticon.svg?42f3c3834d738a717088a4d15961e219#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-user:before {
+    content: "\f101";
+}
+.flaticon-user-1:before {
+    content: "\f102";
+}
+.flaticon-group:before {
+    content: "\f103";
+}
+.flaticon-user-3:before {
+    content: "\f104";
+}
+.flaticon-user-4:before {
+    content: "\f105";
+}
+.flaticon-user-5:before {
+    content: "\f106";
+}
+.flaticon-profile-user:before {
+    content: "\f107";
+}
+.flaticon-phone-call:before {
+    content: "\f108";
+}
+.flaticon-smartphone:before {
+    content: "\f109";
+}
+.flaticon-old-typical-phone:before {
+    content: "\f10a";
+}
+.flaticon-call:before {
+    content: "\f10b";
+}
+.flaticon-mobile-phone:before {
+    content: "\f10c";
+}
+.flaticon-pin:before {
+    content: "\f10d";
+}
+.flaticon-placeholder:before {
+    content: "\f10e";
+}
+.flaticon-pin-1:before {
+    content: "\f10f";
+}
+.flaticon-location:before {
+    content: "\f110";
+}
+.flaticon-mail:before {
+    content: "\f111";
+}
+.flaticon-email:before {
+    content: "\f112";
+}
+.flaticon-envelope:before {
+    content: "\f113";
+}

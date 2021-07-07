@@ -1,0 +1,101 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?42f3c3834d738a717088a4d15961e219") format("truetype"),
+url("./flaticon.woff?42f3c3834d738a717088a4d15961e219") format("woff"),
+url("./flaticon.woff2?42f3c3834d738a717088a4d15961e219") format("woff2"),
+url("./flaticon.eot?42f3c3834d738a717088a4d15961e219#iefix") format("embedded-opentype"),
+url("./flaticon.svg?42f3c3834d738a717088a4d15961e219#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "user": "\f101",
+    "user-1": "\f102",
+    "group": "\f103",
+    "user-3": "\f104",
+    "user-4": "\f105",
+    "user-5": "\f106",
+    "profile-user": "\f107",
+    "phone-call": "\f108",
+    "smartphone": "\f109",
+    "old-typical-phone": "\f10a",
+    "call": "\f10b",
+    "mobile-phone": "\f10c",
+    "pin": "\f10d",
+    "placeholder": "\f10e",
+    "pin-1": "\f10f",
+    "location": "\f110",
+    "mail": "\f111",
+    "email": "\f112",
+    "envelope": "\f113",
+);
+
+.flaticon-user:before {
+    content: map-get($flaticon-map, "user");
+}
+.flaticon-user-1:before {
+    content: map-get($flaticon-map, "user-1");
+}
+.flaticon-group:before {
+    content: map-get($flaticon-map, "group");
+}
+.flaticon-user-3:before {
+    content: map-get($flaticon-map, "user-3");
+}
+.flaticon-user-4:before {
+    content: map-get($flaticon-map, "user-4");
+}
+.flaticon-user-5:before {
+    content: map-get($flaticon-map, "user-5");
+}
+.flaticon-profile-user:before {
+    content: map-get($flaticon-map, "profile-user");
+}
+.flaticon-phone-call:before {
+    content: map-get($flaticon-map, "phone-call");
+}
+.flaticon-smartphone:before {
+    content: map-get($flaticon-map, "smartphone");
+}
+.flaticon-old-typical-phone:before {
+    content: map-get($flaticon-map, "old-typical-phone");
+}
+.flaticon-call:before {
+    content: map-get($flaticon-map, "call");
+}
+.flaticon-mobile-phone:before {
+    content: map-get($flaticon-map, "mobile-phone");
+}
+.flaticon-pin:before {
+    content: map-get($flaticon-map, "pin");
+}
+.flaticon-placeholder:before {
+    content: map-get($flaticon-map, "placeholder");
+}
+.flaticon-pin-1:before {
+    content: map-get($flaticon-map, "pin-1");
+}
+.flaticon-location:before {
+    content: map-get($flaticon-map, "location");
+}
+.flaticon-mail:before {
+    content: map-get($flaticon-map, "mail");
+}
+.flaticon-email:before {
+    content: map-get($flaticon-map, "email");
+}
+.flaticon-envelope:before {
+    content: map-get($flaticon-map, "envelope");
+}
