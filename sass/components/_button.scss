@@ -1,6 +1,6 @@
 
-
 .btn {
+  &,   // button, as a <button> element does not have a link / visted like an <a> element
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -12,6 +12,10 @@
     transition: all .2s;
     position: relative;
     font-size: $default-font-size;
+
+    // CHANGE FOR THE <BUTTON> ELEMENT
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -36,6 +40,15 @@
 
     &::after {
       background-color: #fff;
+    } 
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
     } 
   }
 

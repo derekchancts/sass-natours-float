@@ -1,0 +1,136 @@
+
+.form {
+
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;  // inherit the font-family. Else, it (the input element) will have it's original font family
+    color: inherit;  // the same reason as above
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rbga($color-white, .5);
+    border: none;
+    border-bottom: 3px solid transparent;  // need to add this as we have added an underline at "input:focus". Else, it will jump when focused  
+    width: 90%;
+    display: block;
+    transition: all .3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+      // background-color: pink;
+    }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $color-grey-dark-2;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $color-grey-dark-2;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $color-grey-dark-2;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $color-grey-dark-2;
+    }
+    
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: inherit;  
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block  ;
+    transition: all .3s;
+    // color: inherit;  
+    // opacity: 0;
+  }
+
+  // + is adjacent sibling - element which is next to the element selected
+  &__input:placeholder-shown + &__label {
+    opacity: 0;  // not visible on teh page, but it's still there. can animate this.
+    visibility: hidden;  // remove element from page. cannot animate this.
+    transform: translateY(-4rem);
+  }
+
+
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -.4rem;
+
+
+    &::after {
+      content: '';
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      // border: 5px solid $color-primary;
+      background-color: $color-primary;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+  }
+
+  // + selects the 1st / immediate next sibling"radio-label"  of "radio-input:checked"
+  // "space" selects all of its (children) "radio-button::after"
+  // &__radio-input:checked + &__radio-label &__radio-button::after{
+  //   opacity: 1;
+  // }
+
+  // ~ selects all (next siblings) "radio-label" next to "radio-input:checked"
+  // "space" selects all of its (children) "radio-button::after"
+  &__radio-input:checked ~ &__radio-label &__radio-button::after{
+    opacity: 1;
+  }
+
+
+  // input[type=radio]:checked ~ .check {
+  //   border: 5px solid #0DFF92;
+  // }
+  
+  // input[type=radio]:checked ~ .check::before{
+  //   background: #0DFF92;
+  // }
+  
+  // input[type=radio]:checked ~ label{
+  //   color: #0DFF92;
+  // }
+
+}
