@@ -1,0 +1,105 @@
+
+.popup {
+  // background-color: $color-black;
+  background-color: rgba($color-black, .8);
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  // display: none;
+  opacity: 0;  // hide the content including text, but still there on the page (takinbg up space)
+  visibility: hidden;  // remove the content including the text
+  transition: all .3s;
+
+
+  &__content {
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    @include centercomponent;
+    background-color: $color-white;
+    // height: 50vh;
+    // width: 100vh;
+    // height: 50rem;  // 50rem is for testing purposes
+    width: 75%;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+    
+    display: table;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);  // translate(-50%, -50%) - because we already have a transform in mixin "centercomponent"
+    transition: all .5s .2s;  // .2s delay allows teh black background to appear first, then the "content"
+  }
+
+  &__left {
+    width: 33.333333%;
+    // float: left;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.666667%;
+    // float: right;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2;
+    column-gap: 4rem;  // default is 1em which is 14px (em is the current size of the element, which is 1.4rem defined here).
+    column-rule: 1px solid $color-grey-light-2;
+
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  }
+
+
+  // OPEN STATES
+
+  // target is id="popup"
+  // this pseudo class "target" is then available. Then we can select it here.
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+      line-height: 1;  // &times; or "x" is text. It has predefined line height. Hence we need to change it, in order to position it correctly.
+    }
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+}
