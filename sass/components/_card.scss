@@ -162,8 +162,13 @@
 
 
 
-  @include respond(tab-port) {
+
+  // @include respond(tab-port) {
+
     // height: 52rem;   // originally makes the front side the same size as the back side, and the same height as the container
+
+  @media only screen and (min-width: 37.5625em) and (max-width: 56.25em), 
+         only screen and (hover: none) {   // device cannot be hovered (uses touch as the primary input)
     height: auto;
     border-radius: 8px;
     background-color: $color-white;
@@ -210,8 +215,11 @@
   }
 
 
-  @include respond(phone) {
+
+  // @include respond(phone) {
     // height: 52rem;   // originally makes the front side the same size as the back side, and the same height as the container
+    @media only screen and (max-width: 37.5em), 
+           only screen and (hover: none) {   // device cannot be hovered (uses touch as the primary input)
     height: auto;
     border-radius: 8px;
     background-color: $color-white;

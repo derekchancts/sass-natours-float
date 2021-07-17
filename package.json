@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "csass": "node-sass sass/main.scss css/style.css -w"
+    "watchsass": "node-sass sass/main.scss css/style.css -w",
+    "compilesass": "node-sass sass/main.scss css/style.comp.css",
+    "concatcss": "concat -o css/style.concat.css css/all.min.css css/fontawesome.min.css css/style.comp.css",
+    "prefixcss": "postcss --use autoprefixer -b \"last 10 versions\" css/style.concat.css -o css/style.prefix.css",
+    "compresscss": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "buildcss": "npm-run-all compilesass concatcss prefixcss compresscss"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "autoprefixer": "^10.3.1",
+    "concat": "^1.0.3",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3"
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "npm-run-all": "^4.1.5"
   }
 }
