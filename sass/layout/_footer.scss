@@ -5,9 +5,27 @@
   font-size: 1.4rem;
   color: $color-grey-light-3;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
+  @include respond(tab-port) {
+    padding: 6rem 0;
+  }
+
+
   &__logo-box {
      text-align: center;  // image is an inline element. Inline elements behaves like text. So can use text-align
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+
+    @include respond(phone) {
+      margin-bottom: 4rem;
+    }
   }
+  
 
   &__logo {
     width: 15rem;
@@ -18,7 +36,18 @@
     border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
     display: inline-block;  // display the content / space that it needs
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      text-align: center;
+    }
   }
+
 
   &__list {
     list-style: none;
@@ -58,5 +87,15 @@
     padding-top: 2rem;
     width: 80%;
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      float: none;
+    }
   }
 }

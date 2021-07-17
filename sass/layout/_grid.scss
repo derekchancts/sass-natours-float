@@ -3,7 +3,7 @@
   // max-width - if we have enough availble space, then it'll have the width specified. If not, ie, the viewport is smaller
   // than the max width specified, then it will simply fill 100% od the available space
   // width: 1140px;
-  max-width: $grid-width; 
+  max-width: $grid-width;   // $grid-width is 114rem
   // background-color: #eee;
   margin: 0 auto;  // center a block element inside another bloack element
   // margin-bottom: $gutter-vertical;
@@ -11,7 +11,29 @@
   // .row:not(:last-child) - selects everything except the last child
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+
+    @include respond(phone) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
+
+
+  // max-width: $grid-width; // $grid-width is 114rem. So, the row is occupying 100% of it's available width - items will be too wide
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
+  @include respond(phone) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
+
 
   @include clearfix;
 
@@ -31,6 +53,24 @@
     
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;  // now vertically align. So, need to add a horizontal margin between them
+      }
+
+      @include respond(phone) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;  // now vertically align. So, need to add a horizontal margin between them
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
+    }
+
+    @include respond(phone) {
+      width: 100% !important;
     }
   }
 
