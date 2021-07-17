@@ -1,5 +1,4 @@
 
-
 .header {
   height: 95vh;
   background-image: linear-gradient(
@@ -7,11 +6,57 @@
       rgba($color-primary-light, 0.8),
       rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
+
+
+  // MEDIA QUERIES - BASED ON RESOLUTION.
+  // dpi = dots per inch. (192dpi - resolution of the Apple retina screen). 
+  // 192dpi - It's a high resolution screen which is usually used as a reference. Minimum 192dpi in this case.
+  // 2nd condition - screen resolution must be 600px or more
+
+  // @media (min-resolution: 192dpi) and (min-width: 600px), 
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),  // 600px / 16 = 37.5em. Media Queries always in "em"  or
+         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),   // safari browser  or
+         // (min-width: 2000px) {
+         (min-width: 125em) {   // 2000px / 16 = 125em
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  }
+
+  // @media (min-width: 2000px) {
+  //   background-image: linear-gradient(
+  //     to right bottom,
+  //     rgba($color-secondary-light, 0.8),
+  //     rgba($color-secondary-dark, 0.8)
+  //   ),
+  //   url(../img/hero.jpg);
+  // }
+
+  // @include respond(big-desktop) {
+  //   background-image: linear-gradient(
+  //     to right bottom,
+  //     rgba($color-secondary-light, 0.8),
+  //     rgba($color-secondary-dark, 0.8)
+  //   ),
+  //   url(../img/hero.jpg);
+  // }
+
+  
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
 
   &__logo-box {
     position: absolute;
